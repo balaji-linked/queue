@@ -7,7 +7,7 @@
   
   <properties>
         <jetty.version>9.4.9.v20180320</jetty.version>
-        <spring.framework.version>4.2.9.RELEASE</spring.framework.version>
+        <spring.framework.version>5.2.1.RELEASE</spring.framework.version>
     </properties>
 	<dependencies>
 	
