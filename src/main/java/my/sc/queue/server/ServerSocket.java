@@ -22,8 +22,6 @@ public class ServerSocket {
 	
 	@OnWebSocketMessage
 	public void onText(Session session, String message) throws IOException {
-		String response = "ACK";
-		session.getRemote().sendString(response);	
 		String queue = session.getUpgradeRequest().getHeader("QueueName");
 		messageService.saveMessage(queue, message);
 	}

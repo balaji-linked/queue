@@ -40,7 +40,7 @@ public class Client {
 		String dest = this.protocol + "://" + this.host + " : " + this.port + "/queue";
 		WebSocketClient client = new WebSocketClient();
 		try {
-			clientSocket = new ClientSocket();
+			clientSocket = new ClientSocket(this);
 			client.start();
 			URI uri = new URI(dest);
 			ClientUpgradeRequest request = new ClientUpgradeRequest();
@@ -171,7 +171,7 @@ public class Client {
 			client.protocol = this.protocol;
 			client.queueName = this.queueName;
 			client.username = this.username;
-			client.clientSocket = new ClientSocket();
+			client.clientSocket = new ClientSocket(client);
 			client.type = this.type;
 			return client;
 		}

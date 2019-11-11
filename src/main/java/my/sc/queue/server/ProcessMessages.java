@@ -21,7 +21,7 @@ public class ProcessMessages implements Runnable {
 		while(true) {
 			/**
 			 * 1. Continuously look for records in the Message table.
-			 * 2. Retrieve them in batches.
+			 * 2. Retrieve them in batches in reverse chronological order.
 			 * 3. process each message.
 			 * 4. If no records found, sleep for sometime and check again.
 			 * 5. This thread should stopped be if interrupted.

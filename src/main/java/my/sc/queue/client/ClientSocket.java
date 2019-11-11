@@ -12,9 +12,26 @@ public class ClientSocket {
 
 	private Session session;
 	
+	private Client client;
+	
+	public ClientSocket(Client client) {
+		this.client = client;
+	}
+	
 	@OnWebSocketMessage
 	public void onText(Session session, String message) throws IOException {
 		System.out.println("Message received from server:" + message);
+		/**
+		 * Call either MessageHandler or ResponseMessageHandler 
+		 * based on the 'Type' of session
+		 */
+		String type = session.getUpgradeRequest().getHeader("Type");
+		if(type.equals("sender")) {
+			client.handleResponse(message);
+		} else if(type.equals("receiver")) {
+			client.handleMessage(message);
+		}
+		
 	}
 
 	@OnWebSocketConnect

@@ -8,6 +8,8 @@ public interface SentMessageService {
 	
 	SentMessage getSentMessage(int recordId);
 	
+	SentMessage getSentMessageByMessageId(String messageId);
+	
 	void updateSentMessage(SentMessage updatedSentMessage);
 	
 	void deleteSentMessage(int recordId);

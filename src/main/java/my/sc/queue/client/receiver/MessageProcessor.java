@@ -32,7 +32,7 @@ public class MessageProcessor implements Callable<Void> {
 		// Create ReceivedMessageService from message.
 		
 		ReceivedMessage receivedMessage = new ReceivedMessage(); //dummy.
-		
+		receivedMessage.setStatus(Status.RECEIVED);
 		//save received message to db.
 		receivedMessageService.saveReceivedMessage(receivedMessage);
 		

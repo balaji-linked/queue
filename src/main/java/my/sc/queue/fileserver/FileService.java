@@ -1,5 +1,7 @@
 package my.sc.queue.fileserver;
 
+import java.util.List;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public interface FileService {
@@ -20,5 +22,22 @@ public interface FileService {
 	 * @param fileId
 	 */
 	public void deleteFile(Integer fileId);
+	
+	/**
+	 * Adds new file type to the allowed list.
+	 */
+	public void addFileType(String fileType);
+	
+	/**
+	 * Deletes a fileType from the already available list.
+	 * @param fileType
+	 */
+	public void deleteFileType(String fileType);
+	
+	/**
+	 * Returns the list of all allowed file types.
+	 * @return
+	 */
+	public List<String> getAllType();
 	
 }
